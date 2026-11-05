@@ -1,5 +1,6 @@
 const app = require('../server');
 const INTERNAL_PATH_QUERY = '__vercel_express_path';
+const INTERNAL_ROUTE_QUERY = 'path';
 
 module.exports = (req, res) => {
   const requestUrl = new URL(req.url, 'http://localhost');
@@ -10,6 +11,7 @@ module.exports = (req, res) => {
     if (req.query) {
       const query = { ...req.query };
       delete query[INTERNAL_PATH_QUERY];
+      delete query[INTERNAL_ROUTE_QUERY];
       req.query = query;
     }
     const query = requestUrl.searchParams.toString();
