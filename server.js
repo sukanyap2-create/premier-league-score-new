@@ -5,14 +5,6 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 
 const app = express();
-app.use((req, res, next) => {
-  if (req.query && Object.hasOwn(req.query, '__vercel_express_path')) {
-    const query = { ...req.query };
-    delete query.__vercel_express_path;
-    Object.defineProperty(req, 'query', { configurable: true, value: query });
-  }
-  next();
-});
 const API_BASE = 'https://api.football-data.org/v4';
 const CACHE_TTL_MS = 90 * 1000;
 const UPSTREAM_CALLS_PER_MINUTE = 10;
@@ -119,12 +111,13 @@ function isValidDate(value) {
 }
 
 function validateFilters(query, allowed, res) {
-  const keys = Object.keys(query);
+  const entries = Object.entries(query).filter(([key]) => key !== '__vercel_express_path');
+  const keys = entries.map(([key]) => key);
   if (keys.some(key => !allowed.has(key))) {
     res.status(400).json({ error: 'มีตัวกรองที่ไม่รองรับ' });
     return false;
   }
-  if (Object.values(query).some(value => typeof value !== 'string')) {
+  if (entries.some(([, value]) => typeof value !== 'string')) {
     res.status(400).json({ error: 'รูปแบบตัวกรองไม่ถูกต้อง' });
     return false;
   }
@@ -182,7 +175,7 @@ function validateFilters(query, allowed, res) {
 function upstreamPathWithQuery(apiPath, query) {
   const params = new URLSearchParams();
   Object.entries(query).forEach(([key, value]) => {
-    if (typeof value === 'string') params.set(key, value);
+    if (key !== '__vercel_express_path' && typeof value === 'string') params.set(key, value);
   });
   const suffix = params.toString();
   return `${apiPath}${suffix ? `?${suffix}` : ''}`;
