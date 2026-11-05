@@ -5,6 +5,14 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 
 const app = express();
+app.use((req, res, next) => {
+  if (req.query && Object.hasOwn(req.query, '__vercel_express_path')) {
+    const query = { ...req.query };
+    delete query.__vercel_express_path;
+    Object.defineProperty(req, 'query', { configurable: true, value: query });
+  }
+  next();
+});
 const API_BASE = 'https://api.football-data.org/v4';
 const CACHE_TTL_MS = 90 * 1000;
 const UPSTREAM_CALLS_PER_MINUTE = 10;

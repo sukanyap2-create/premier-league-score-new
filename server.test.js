@@ -24,6 +24,7 @@ test('match filters reject invalid input before proxying upstream', async t => {
     ['dateFrom=2026-02-30', 'วันที่เริ่มต้น'],
     ['dateFrom=2026-10-10&dateTo=2026-10-01', 'วันที่เริ่มต้น'],
     ['unknown=value', 'ตัวกรอง'],
+    ['matchday=0&__vercel_express_path=competitions%2FPL%2Fstandings', 'matchday'],
     ['status=FINISHED&status=LIVE', 'รูปแบบตัวกรอง']
   ];
 
