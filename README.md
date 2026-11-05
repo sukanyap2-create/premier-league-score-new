@@ -134,7 +134,7 @@ npm run build
 npm run preview
 ```
 
-`npm start` ให้บริการทั้ง production build และ API routes หากนำขึ้น Vercel ให้กำหนด `FOOTBALL_DATA_TOKEN` เป็น Environment Variable ฝั่งเซิร์ฟเวอร์ `api/[...path].js` ใช้ปรับ Express app ให้ทำงานเป็น serverless function ส่วน cache และตัวจำกัดคำขอในหน่วยความจำแยกกันในแต่ละ instance
+`npm start` ให้บริการทั้ง production build และ API routes หากนำขึ้น Vercel ให้กำหนด `FOOTBALL_DATA_TOKEN` เป็น Environment Variable ฝั่งเซิร์ฟเวอร์ `api/index.js` รับคำขอ API ผ่าน rewrite ใน `vercel.json` แล้วส่งเส้นทางเดิมเข้า Express ส่วน cache และตัวจำกัดคำขอในหน่วยความจำแยกกันในแต่ละ instance
 
 ## โครงสร้างโปรเจกต์
 
@@ -149,7 +149,7 @@ src/
   demo.js          ตัวเชื่อมข้อมูลตัวอย่างที่ระบุว่าเป็น Demo
   main.jsx         จุดเริ่มต้น React
 server.js          Express API proxy, cache และตัวจำกัดคำขอ
-api/[...path].js   ตัวปรับ Express สำหรับ Vercel serverless
+api/index.js       จุดรับ API สำหรับ Vercel และส่งเส้นทางเข้า Express
 ```
 
 ## การตรวจสอบ

@@ -1,5 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "missing": [
+        {
+          "type": "query",
+          "key": "__vercel_express_path"
+        }
+      ],
+      "destination": "/api/index?__vercel_express_path=:path*"
+    }
+  ]
 }
