@@ -114,6 +114,7 @@ function validateFilters(query, allowed, res) {
   const entries = Object.entries(query).filter(([key]) => key !== '__vercel_express_path');
   const keys = entries.map(([key]) => key);
   if (keys.some(key => !allowed.has(key))) {
+    res.set('X-Debug-Query-Keys', keys.join(','));
     res.status(400).json({ error: 'มีตัวกรองที่ไม่รองรับ' });
     return false;
   }
