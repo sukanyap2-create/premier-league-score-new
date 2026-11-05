@@ -7,8 +7,10 @@ module.exports = (req, res) => {
 
   if (apiPath) {
     requestUrl.searchParams.delete(INTERNAL_PATH_QUERY);
-    if (req.query && Object.hasOwn(req.query, INTERNAL_PATH_QUERY)) {
-      delete req.query[INTERNAL_PATH_QUERY];
+    if (req.query) {
+      const query = { ...req.query };
+      delete query[INTERNAL_PATH_QUERY];
+      req.query = query;
     }
     const query = requestUrl.searchParams.toString();
     req.url = `/api/${apiPath}${query ? `?${query}` : ''}`;
