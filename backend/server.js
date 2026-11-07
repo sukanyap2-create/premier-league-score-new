@@ -12,11 +12,12 @@ const UPSTREAM_CALLS_PER_MINUTE = 10;
 const UPSTREAM_REQUEST_INTERVAL_MS = 6500;
 const MAX_CACHE_ENTRIES = 128;
 const PREMIER_LEAGUE_CODE = 'PL';
+const projectRoot = path.join(__dirname, '..');
 const BACKUP_FILE = path.resolve(
-  process.env.FOOTBALL_DATA_BACKUP_PATH || path.join(__dirname, '.cache', 'football-data-backup.json')
+  process.env.FOOTBALL_DATA_BACKUP_PATH || path.join(projectRoot, '.cache', 'football-data-backup.json')
 );
 const responseCache = new Map();
-const distPath = path.join(__dirname, 'dist');
+const distPath = path.join(projectRoot, 'dist');
 let backupEntries = null;
 let backupLoadPromise = null;
 let backupWriteQueue = Promise.resolve();

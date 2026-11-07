@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { formatSquadUpdatedAt, groupSquadByPosition, isSquadDataStale } = require('./src/squad');
-const { CLUB_OWNERSHIP } = require('./src/clubOwnership');
+const { formatSquadUpdatedAt, groupSquadByPosition, isSquadDataStale } = require('./frontend/src/squad');
+const { CLUB_OWNERSHIP } = require('./frontend/src/clubOwnership');
 
 test('groups players by API positions and omits players without a recognized position', () => {
   const grouped = groupSquadByPosition([

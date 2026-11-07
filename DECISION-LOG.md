@@ -9,15 +9,15 @@
 ## Component tree และการไหลของ state
 
 ```text
-src/main.jsx
+frontend/src/main.jsx
 └─ App (DashboardApp)
    ├─ state: page, mode, selections, favorites, filters, theme, refresh key
    ├─ Sidebar / MobileNav
    └─ active page renderer
       ├─ PageHeading / Card / MetricCard / StatusNotice
       ├─ MatchTable / StandingsTable / TeamGrid / PointsChart
-      └─ useResource → src/api.js → /api/*
-                            └─ server.js (Express) → football-data.org
+      └─ useResource → frontend/src/api.js → /api/*
+                            └─ backend/server.js (Express) → football-data.org
 ```
 
 `useResource` เก็บสถานะ loading, success, unavailable, error และ stale/backup ของแต่ละ resource แยกกัน `StatusNotice` แสดงข้อความที่เข้าใจได้พร้อม `role="status"` หรือ `role="alert"`; รายการว่างมี empty state ของตัวเอง ไม่แปลง error เป็นผลลัพธ์ว่างหรือสำเร็จ
@@ -32,7 +32,7 @@ src/main.jsx
 
 ### Substring index + HashTable (React search)
 
-`src/App.jsx` สร้างดัชนีเมื่อรายการทีมจาก API เปลี่ยน ด้วย `buildSubstringIndex` ใน `src/dsa.mjs` แล้วใช้ `searchSubstringIndex` กับช่องค้นหาหน้าสโมสรและหน้าค้นหา ข้อความที่ใช้ค้นรวมชื่อ, short name, TLA และ area; normalize ด้วย NFKC และตัวพิมพ์เล็ก Search hint ใน UI ระบุว่าค้นจากดัชนีใน React และไม่เรียก API เพิ่ม
+`frontend/src/App.jsx` สร้างดัชนีเมื่อรายการทีมจาก API เปลี่ยน ด้วย `buildSubstringIndex` ใน `frontend/src/dsa.mjs` แล้วใช้ `searchSubstringIndex` กับช่องค้นหาหน้าสโมสรและหน้าค้นหา ข้อความที่ใช้ค้นรวมชื่อ, short name, TLA และ area; normalize ด้วย NFKC และตัวพิมพ์เล็ก Search hint ใน UI ระบุว่าค้นจากดัชนีใน React และไม่เรียก API เพิ่ม
 
 `HashTable` ใช้ separate chaining และขยาย bucket เมื่อ load factor เกิน 0.75
 

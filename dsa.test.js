@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 async function loadDsa() {
-  return import('./src/dsa.mjs');
+  return import('./frontend/src/dsa.mjs');
 }
 
 test('mergeSort sorts stably without changing the original array', async () => {

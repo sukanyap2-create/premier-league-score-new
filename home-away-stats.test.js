@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 test('calculates home and away records from completed matches only', async () => {
-  const { calculateHomeAwayStats } = await import('./src/homeAwayStats.mjs');
+  const { calculateHomeAwayStats } = await import('./frontend/src/homeAwayStats.mjs');
   const matches = [
     { status: 'FINISHED', homeTeam: { id: 1 }, awayTeam: { id: 2 }, score: { fullTime: { home: 2, away: 0 } } },
     { status: 'FINISHED', homeTeam: { id: 3 }, awayTeam: { id: 1 }, score: { fullTime: { home: 1, away: 1 } } },

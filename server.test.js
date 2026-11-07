@@ -6,7 +6,7 @@ process.env.FOOTBALL_DATA_BACKUP_PATH = path.join(
   os.tmpdir(),
   `football-dashboard-server-tests-${process.pid}-${Date.now()}.json`
 );
-const app = require('./server');
+const app = require('./backend/server');
 
 test('match filters reject invalid input before proxying upstream', async t => {
   const server = app.listen(0);

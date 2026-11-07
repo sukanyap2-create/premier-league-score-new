@@ -5,14 +5,14 @@ const os = require('node:os');
 const path = require('node:path');
 
 const backupPath = path.join(os.tmpdir(), `football-dashboard-backup-${process.pid}-${Date.now()}.json`);
-const serverModulePath = require.resolve('./server');
+const serverModulePath = require.resolve('./backend/server');
 const savedToken = process.env.FOOTBALL_DATA_TOKEN;
 const savedBackupPath = process.env.FOOTBALL_DATA_BACKUP_PATH;
 const originalFetch = global.fetch;
 process.env.FOOTBALL_DATA_TOKEN = 'test-token';
 process.env.FOOTBALL_DATA_BACKUP_PATH = backupPath;
 
-let app = require('./server');
+let app = require('./backend/server');
 let server;
 
 function listen(application) {
@@ -69,7 +69,7 @@ test('serves persisted API data with a stale marker when the upstream is unavail
   await close(server);
 
   delete require.cache[serverModulePath];
-  app = require('./server');
+  app = require('./backend/server');
   global.fetch = async () => {
     throw new Error('simulated upstream outage');
   };
