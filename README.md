@@ -87,13 +87,13 @@ frontend/src/main.jsx
 
 #### ตารางข้อแนะนำและการต่อยอดจากงานแรก
 
-งานแรกเป็นหน้าแสดงตารางคะแนนพรีเมียร์ลีก พร้อมเรียงข้อมูลด้วย Merge Sort และค้นหาทีมด้วย Hash Table ตาม [เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) ตารางนี้สรุปการพัฒนาต่อยอดจากงานแรก โดยไม่อ้างว่าเป็นคำแนะนำจากผู้สอน
+งานแรกคือ [repository premier-league-score](https://github.com/sukanyap2-create/premier-league-score) ซึ่งเป็นหน้าแสดงตารางคะแนนพรีเมียร์ลีก พร้อมเรียงข้อมูลด้วย Merge Sort และค้นหาทีมด้วย Hash Table ([เว็บไซต์ตัวอย่างที่ deploy](https://premier-league-score.vercel.app/) ใช้ดูการทำงาน) ตารางนี้สรุปการพัฒนาต่อยอดจากงานแรก โดยไม่อ้างว่าเป็นคำแนะนำจากผู้สอน
 
 | งานแรก (Before) | สิ่งที่พัฒนาต่อยอดในงานนี้ | หลักฐาน Before / After |
 |---|---|---|
-| หน้าเว็บหลักแสดงตารางคะแนนพรีเมียร์ลีก | เพิ่มหน้า Dashboard, โปรแกรม/ผลการแข่งขัน, สโมสร, รายละเอียดทีมและแมตช์, ค้นหา และตั้งค่า | [Before: เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) · [After: โค้ดงานปัจจุบัน](https://github.com/sukanyap2-create/premier-league-score-new/tree/main/frontend) |
-| แสดงข้อความกำลังโหลดระหว่างดึงข้อมูลและตารางคะแนน | เพิ่มสถานะไม่มีข้อมูล ข้อผิดพลาด และข้อมูลสำรองเก่าเมื่อ API ใช้งานไม่ได้ | [Before: เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) · [After: โค้ดงานปัจจุบัน](https://github.com/sukanyap2-create/premier-league-score-new/tree/main/backend) |
-| มีการเรียงตารางด้วย Merge Sort และค้นหาทีมด้วย Hash Table | ต่อยอด DSA สำหรับค้นหาชื่อทีมจากดัชนี substring และเพิ่มสถิติ/การเปรียบเทียบสโมสร | [Before: เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) · [After: โค้ด DSA](https://github.com/sukanyap2-create/premier-league-score-new/blob/main/frontend/src/dsa.mjs) |
+| หน้าเว็บหลักแสดงตารางคะแนนพรีเมียร์ลีก | เพิ่มหน้า Dashboard, โปรแกรม/ผลการแข่งขัน, สโมสร, รายละเอียดทีมและแมตช์, ค้นหา และตั้งค่า | [Before: repository งานแรก](https://github.com/sukanyap2-create/premier-league-score) · [เว็บไซต์ตัวอย่าง](https://premier-league-score.vercel.app/) · [After: โค้ดงานปัจจุบัน](https://github.com/sukanyap2-create/premier-league-score-new/tree/main/frontend) |
+| แสดงข้อความกำลังโหลดระหว่างดึงข้อมูลและตารางคะแนน | เพิ่มสถานะไม่มีข้อมูล ข้อผิดพลาด และข้อมูลสำรองเก่าเมื่อ API ใช้งานไม่ได้ | [Before: repository งานแรก](https://github.com/sukanyap2-create/premier-league-score) · [After: โค้ดงานปัจจุบัน](https://github.com/sukanyap2-create/premier-league-score-new/tree/main/backend) |
+| มีการเรียงตารางด้วย Merge Sort และค้นหาทีมด้วย Hash Table | ต่อยอด DSA สำหรับค้นหาชื่อทีมจากดัชนี substring และเพิ่มสถิติ/การเปรียบเทียบสโมสร | [Before: repository งานแรก](https://github.com/sukanyap2-create/premier-league-score) · [After: โค้ด DSA](https://github.com/sukanyap2-create/premier-league-score-new/blob/main/frontend/src/dsa.mjs) |
 
 ## ข้อจำกัดของ API และแพ็กเกจ
 
