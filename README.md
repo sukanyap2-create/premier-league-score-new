@@ -89,6 +89,19 @@ frontend/src/main.jsx
 
 งานแรกคือ [repository premier-league-score](https://github.com/sukanyap2-create/premier-league-score) ซึ่งเป็นหน้าแสดงตารางคะแนนพรีเมียร์ลีก พร้อมเรียงข้อมูลด้วย Merge Sort และค้นหาทีมด้วย Hash Table ([เว็บไซต์ตัวอย่างที่ deploy](https://premier-league-score.vercel.app/) ใช้ดูการทำงาน) ตารางนี้สรุปการพัฒนาต่อยอดจากงานแรก โดยไม่อ้างว่าเป็นคำแนะนำจากผู้สอน
 
+ภาพเปรียบเทียบหน้าเว็บงานแรกกับแดชบอร์ดปัจจุบัน:
+
+<table>
+  <tr>
+    <th>Before — งานแรก</th>
+    <th>After — งานปัจจุบัน</th>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/sukanyap2-create/premier-league-score-new/main/docs/screenshots/before-first-project.png" alt="ภาพหน้าเว็บงานแรก แสดงตารางคะแนนพรีเมียร์ลีก" width="100%"></td>
+    <td><img src="https://raw.githubusercontent.com/sukanyap2-create/premier-league-score-new/main/docs/screenshots/after-dashboard.png" alt="ภาพแดชบอร์ดพรีเมียร์ลีกปัจจุบัน" width="100%"></td>
+  </tr>
+</table>
+
 | งานแรก (Before) | สิ่งที่พัฒนาต่อยอดในงานนี้ | หลักฐาน Before / After |
 |---|---|---|
 | หน้าเว็บหลักแสดงตารางคะแนนพรีเมียร์ลีก | เพิ่มหน้า Dashboard, โปรแกรม/ผลการแข่งขัน, สโมสร, รายละเอียดทีมและแมตช์, ค้นหา และตั้งค่า | [Before: repository งานแรก](https://github.com/sukanyap2-create/premier-league-score) · [เว็บไซต์ตัวอย่าง](https://premier-league-score.vercel.app/) · [After: โค้ดงานปัจจุบัน](https://github.com/sukanyap2-create/premier-league-score-new/tree/main/frontend) |
