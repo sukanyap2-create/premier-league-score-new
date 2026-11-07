@@ -85,15 +85,15 @@ frontend/src/main.jsx
 | ปุญญพัฒน์ สุกัญญา | 681310784 | การเชื่อมต่อ API และ Express: `frontend/src/api.js`, `backend/server.js`, `backend/api/index.js` | โครงสร้าง React และ Express (4:23–6:50) |
 | กิตติ์รัฐ ครบอุดม | 681310003 | DSA และสถิติ: `frontend/src/dsa.mjs`, `frontend/src/homeAwayStats.mjs`; สรุปผล | DSA เชิงลึก (6:50-9:08);  |
 
-#### ตารางข้อแนะนำ
+#### ตารางข้อแนะนำและการต่อยอดจากงานแรก
 
-ตัวอย่างด้านล่างต้องปรับให้ตรงกับข้อแนะนำที่กลุ่มได้รับจริง และเพิ่มหลักฐานก่อน–หลังที่เกี่ยวข้องก่อนส่ง
+งานแรกเป็นหน้าแสดงตารางคะแนนพรีเมียร์ลีก พร้อมเรียงข้อมูลด้วย Merge Sort และค้นหาทีมด้วย Hash Table ตาม [เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) ตารางนี้สรุปการพัฒนาต่อยอดจากงานแรก โดยไม่อ้างว่าเป็นคำแนะนำจากผู้สอน
 
-| ข้อแนะนำจากงานแรก | สิ่งที่แก้ในงานนี้ | หลักฐาน Before / After |
+| งานแรก (Before) | สิ่งที่พัฒนาต่อยอดในงานนี้ | หลักฐาน Before / After |
 |---|---|---|
-| `[ใส่ข้อแนะนำที่ได้รับจริง]` | เพิ่มหน้าและเมนูภาพรวม โปรแกรม/ผล ตารางคะแนน สโมสร รายละเอียดทีม/แมตช์ ค้นหา และตั้งค่า | `[แนบภาพหรือคลิป Before / After]` |
-| `[ใส่ข้อแนะนำที่ได้รับจริง]` | เพิ่มสถานะกำลังโหลด ไม่มีข้อมูล ข้อผิดพลาด และข้อมูลสำรองเก่า | `[แนบภาพหรือคลิป Before / After]` |
-| `[ใส่ข้อแนะนำที่ได้รับจริง]` | สร้างดัชนี substring ด้วย Hash Table เพื่อค้นหาจากดัชนีที่สร้างไว้ | `[แนบภาพหรือคลิป Before / After]` |
+| หน้าเว็บหลักแสดงตารางคะแนนพรีเมียร์ลีก | เพิ่มหน้า Dashboard, โปรแกรม/ผลการแข่งขัน, สโมสร, รายละเอียดทีมและแมตช์, ค้นหา และตั้งค่า | [Before: เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) · [After: โค้ดงานปัจจุบัน](https://github.com/sukanyap2-create/premier-league-score-new/tree/main/frontend) |
+| แสดงข้อความกำลังโหลดระหว่างดึงข้อมูลและตารางคะแนน | เพิ่มสถานะไม่มีข้อมูล ข้อผิดพลาด และข้อมูลสำรองเก่าเมื่อ API ใช้งานไม่ได้ | [Before: เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) · [After: โค้ดงานปัจจุบัน](https://github.com/sukanyap2-create/premier-league-score-new/tree/main/backend) |
+| มีการเรียงตารางด้วย Merge Sort และค้นหาทีมด้วย Hash Table | ต่อยอด DSA สำหรับค้นหาชื่อทีมจากดัชนี substring และเพิ่มสถิติ/การเปรียบเทียบสโมสร | [Before: เว็บไซต์งานแรก](https://premier-league-score.vercel.app/) · [After: โค้ด DSA](https://github.com/sukanyap2-create/premier-league-score-new/blob/main/frontend/src/dsa.mjs) |
 
 ## ข้อจำกัดของ API และแพ็กเกจ
 
